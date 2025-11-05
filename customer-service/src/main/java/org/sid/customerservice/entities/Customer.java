@@ -10,9 +10,9 @@ import lombok.*;
 @NoArgsConstructor @Builder @AllArgsConstructor @Data @Getter @Setter
 public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String nom;
-    String email;
+    private Long id;
+    private String nom;
+    private String email;
 
 
 }
