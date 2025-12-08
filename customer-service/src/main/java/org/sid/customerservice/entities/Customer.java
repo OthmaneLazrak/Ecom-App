@@ -7,12 +7,11 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@NoArgsConstructor @Builder @AllArgsConstructor @Data @Getter @Setter
+@NoArgsConstructor @Builder @AllArgsConstructor
+@Getter @Setter
 public class Customer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String email;
-
-
 }
