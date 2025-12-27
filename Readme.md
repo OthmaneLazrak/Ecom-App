@@ -40,4 +40,9 @@
 <h3>Chatbot Angular: </h3>
 <img src="images/chatbotangular.png">
 
+<h3>Chatbot RAG: </h3>
+<img src="images/chatbotRAG.png">
+<p>Split en chunks et stockage sous vecteurs:</p>
+<img src="images/fichierstockage.png">
+
 

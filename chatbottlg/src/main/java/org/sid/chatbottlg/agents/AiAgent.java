@@ -2,8 +2,10 @@ package org.sid.chatbottlg.agents;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
@@ -14,7 +16,7 @@ public class AiAgent {
     private ChatClient chatClient;
 
     public AiAgent(ChatClient.Builder builder, ChatMemory chatMemory,
-                   ToolCallbackProvider tools) {
+                   ToolCallbackProvider tools, SimpleVectorStore vectorStore) {
         Arrays.stream(tools.getToolCallbacks()).forEach(tool -> {
                     System.out.println("----------------");
                     System.out.println(tool.getToolDefinition());
@@ -29,6 +31,7 @@ public class AiAgent {
                         """)
                 .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
                 .defaultToolCallbacks(tools)
+                .defaultAdvisors(new QuestionAnswerAdvisor(vectorStore))
                 .build();
     }
 

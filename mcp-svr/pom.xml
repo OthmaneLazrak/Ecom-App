@@ -87,6 +87,16 @@
             <artifactId>jackson-datatype-jdk8</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-pdf-document-reader</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-vector-store</artifactId>
+        </dependency>
+
         <!-- Pour LocalDate, LocalDateTime (même si tu n’en as pas, Spring AI en a besoin) -->
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
